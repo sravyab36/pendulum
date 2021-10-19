@@ -50,7 +50,7 @@ const createPendulum = () => {
         lineStart: {x: canvasWidth/2, y: 300},
         size: 100,
         swingRadius: 200,
-        color: [120,0,120],
+        color: [120,200,120],
         angle: PI/2,
         gravity: 0.9,
         damping: 0.9995,
