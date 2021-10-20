@@ -19,10 +19,10 @@ function setup() {
     })
   })
   // pendulum = createPendulum()
-  // button1 = createButton('DISCO');
-  // button1.size(100,75)
-  // button1.position(canvasWidth - 125, canvasHeight - 100);
-  // button1.mousePressed(changeMode);
+  button1 = createButton('DISCO');
+  button1.size(100,75)
+  button1.position(canvasWidth - 375, canvasHeight - 100);
+  button1.mousePressed(changeMode);
 
   button2 = createButton('RESET');
   button2.size(100,75)
@@ -35,13 +35,12 @@ function setup() {
   button3.mousePressed(halt);
 }
 
-// function changeMode() {
-//   let color = getRandomColor()
-//   pendulums.forEach((pendulumArr) => {pendulumArr.forEach((pendulum) => {
-//       pendulum.color = color
-//     })
-//   })
-// }
+function changeMode() {
+  pendulums.forEach((pendulumArr) => {pendulumArr.forEach((pendulum) => {
+      pendulum.mode = 1
+    })
+  })
+}
 
 function draw() {
   background(210,180,140);
@@ -56,16 +55,16 @@ const drawLine = (pendulum) => {
 }
 
 const drawCircle = (pendulum) => {
-  // if (pendulum.mode == 0) {
-  //   fill(pendulum.color)
-  //   stroke(pendulum.color)
-  // } else {
-  //   let color = getRandomColor()
-  //   fill(color)
-  //   stroke(color)
-  // }
-  fill(pendulum.color)
-  stroke(pendulum.color)
+  if (pendulum.mode == 0) {
+    fill(pendulum.color)
+    stroke(pendulum.color)
+  } else {
+    let color = getRandomColor()
+    fill(color)
+    stroke(color)
+  }
+  // fill(pendulum.color)
+  // stroke(pendulum.color)
   ellipse(pendulum.center.x, pendulum.center.y, pendulum.size)
 }
 
