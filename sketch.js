@@ -88,7 +88,7 @@ function reset() {
 function halt() {
   pendulums.forEach((pendulumArr) => {
     pendulumArr.forEach((pendulum) => {
-      pendulum.mode = 0
+      // pendulum.mode = 0
       pendulum.damping = 0
       pendulum.angle = 0
     })
